@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人介绍卡片生成器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <h1>个人介绍卡片生成器</h1>
+            <p>填写信息，生成专属个人介绍卡片</p>
+        </header>
+
+        <main class="main">
+            <div class="form-container">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="avatar">头像</label>
+                        <div class="avatar-options">
+                            <div class="avatar-tabs">
+                                <button type="button" class="avatar-tab active" data-type="upload">上传图片</button>
+                                <button type="button" class="avatar-tab" data-type="url">外链地址</button>
+                            </div>
+                            <div class="avatar-upload active" id="uploadSection">
+                                <input type="file" id="avatar" accept="image/*" hidden>
+                                <div class="upload-area" onclick="document.getElementById('avatar').click()">
+                                    <span>点击上传头像</span>
+                                </div>
+                            </div>
+                            <div class="avatar-url" id="urlSection">
+                                <input type="url" id="avatarUrl" placeholder="请输入头像链接地址">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" placeholder="请输入姓名" value="QingJ">
+                        </div>
+                        <div class="form-group">
+                            <label for="profession">职业</label>
+                            <input type="text" id="profession" placeholder="请输入职业" value="项目经理·developer">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">地理位置</label>
+                        <input type="text" id="location" placeholder="请输入地理位置" value="中国 北京 北京市">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="greeting">个人介绍</label>
+                        <input type="text" id="greeting" placeholder="🎉你好呀" value="👋哈喽我是QingJ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="education">教育背景</label>
+                        <input type="text" id="education" placeholder="请输入教育背景" value="🏫西安电子科技大学｜大一｜软件工程">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">工作经历</label>
+                        <input type="text" id="experience" placeholder="请输入工作经历" value="💼腾讯->阿里->字节｜转码">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="github">GitHub</label>
+                        <input type="text" id="github" placeholder="请输入GitHub账号" value="👨‍💻GitHub@QingJ01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projects">项目经历</label>
+                        <input type="text" id="projects" placeholder="请输入你的项目经历" value="✨@123pan_unlock｜Search_clear">
+                    </div>
+
+                    <div class="custom-items-section">
+                        <div class="section-header">
+                            <label>自定义信息项</label>
+                            <button type="button" id="addItemBtn" class="add-btn">+ 添加项目</button>
+                        </div>
+                        <div id="customItemsList" class="custom-items-list">
+                            <!-- 自定义项目将在这里动态添加 -->
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button id="downloadBtn" class="btn-primary">下载卡片</button>
+                        <button id="copyCodeBtn" class="btn-secondary">复制代码</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-container">
+                <div class="preview-tabs">
+                    <button class="tab-btn active" data-tab="preview">预览效果</button>
+                    <button class="tab-btn" data-tab="code">HTML代码</button>
+                </div>
+                
+                <div class="tab-content active" id="previewTab">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="avatar-container">
+                                <img id="previewAvatar" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik01MCA1MEMzNS41IDUwIDI0IDM4LjUgMjQgMjRTMzUuNSAtMiA1MCAyUzc2IDEzLjUgNzYgMjhTNjQuNSA1MCA1MCA1MFoiIGZpbGw9IiM5Q0EzQUYiLz4KPHBhdGggZD0iTTUwIDUyQzMwIDUyIDEwIDY2IDEwIDg0VjEwMEg5MFY4NEM5MCA2NiA3MCA1MiA1MCA1MloiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+" alt="默认头像">
+                            </div>
+                            <div class="social-icons">
+                                <span>💬</span>
+                                <span>🔗</span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <h2 class="name" id="previewName">ziwen</h2>
+                            <p class="profession" id="previewProfession">AI 决策·developer·中国 北京 北京市·他</p>
+                            
+                            <div class="info-list">
+                                <div class="info-item" id="previewGreeting">👋哈喽我是ziwen</div>
+                                <div class="info-item" id="previewEducation">🏫中央民族大学｜大三｜前端开发</div>
+                                <div class="info-item" id="previewExperience">💼泰康->美团->小红书｜转码</div>
+                                <div class="info-item" id="previewGithub">👨‍💻GitHub@FoundDream</div>
+                                <div class="info-item" id="previewProjects">✨@AdventureX｜OSPP｜OpenTiny</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="codeTab">
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>HTML代码</span>
+                            <button id="copyCodeDirectBtn" class="copy-btn">复制</button>
+                        </div>
+                        <pre><code id="htmlCode"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p class="copyright">© 2024 个人介绍卡片生成器 - 让每个人都有专属的介绍卡片</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/QingJ01/card-generator" target="_blank" class="footer-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub 开源项目
+                    </a>
+                    <a href="https://qm.qq.com/cgi-bin/qm/qr?k=pD9nQAHYV5ab_ajr6DgGYDdhQIGopY4h&jump_from=webapi" target="_blank" class="footer-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.097.118.112.221.083.341-.09.381-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.746-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                        </svg>
+                        QQ交流群：1032817191
+                    </a>
+                    <a href="https://blog.byebug.cn/" target="_blank" class="footer-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                        作者's Blog
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

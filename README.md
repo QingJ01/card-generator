@@ -24,13 +24,13 @@
 ## 🚀 快速开始
 
 ### 在线使用
-直接访问：[个人介绍卡片生成器](https://your-domain.com)
+直接访问：[个人介绍卡片生成器](https://byebug.cn/card-generator/)
 
 ### 本地部署
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/CodeBuddy-AI/card-generator.git
+git clone https://github.com/QingJ01/card-generator.git
 cd card-generator
 ```
 

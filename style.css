@@ -492,38 +492,223 @@ body {
     .main {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        padding: 1.5rem;
     }
     
     .preview-container {
         position: static;
-        display: flex;
-        justify-content: center;
+        order: -1; /* 预览区域在移动端显示在表单上方 */
+    }
+    
+    .card {
+        margin: 0 auto;
+        max-width: 100%;
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
     .main {
         padding: 1rem;
+        gap: 1rem;
     }
     
     .form-container {
-        padding: 1.5rem;
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .form-section {
+        gap: 1rem;
     }
     
     .form-row {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .header {
-        padding: 1.5rem 1rem;
+        padding: 1rem;
     }
     
     .header h1 {
         font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .header p {
+        font-size: 0.875rem;
     }
     
     .card {
         padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .card-header {
+        margin-bottom: 1rem;
+    }
+    
+    .avatar-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .name {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .profession {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .info-list {
+        gap: 0.5rem;
+    }
+    
+    .info-item {
+        font-size: 0.8rem;
+        padding: 0.125rem 0;
+    }
+    
+    /* 表单元素移动端优化 */
+    .form-group input {
+        padding: 0.875rem;
+        font-size: 16px; /* 防止iOS缩放 */
+        border-radius: 6px;
+    }
+    
+    .avatar-tab {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .upload-area {
+        padding: 1rem;
+    }
+    
+    .upload-area span {
+        font-size: 0.8rem;
+    }
+    
+    /* 按钮移动端优化 */
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+    
+    /* 标签页移动端优化 */
+    .tab-btn {
+        padding: 0.875rem;
+        font-size: 0.8rem;
+    }
+    
+    .tab-content {
+        padding: 1rem;
+    }
+    
+    /* 代码区域移动端优化 */
+    .code-container code {
+        font-size: 0.7rem;
+        line-height: 1.4;
+    }
+    
+    .code-header {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .copy-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.7rem;
+    }
+    
+    /* 自定义项目移动端优化 */
+    .custom-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .custom-item input {
+        font-size: 16px; /* 防止iOS缩放 */
+        padding: 0.875rem;
+    }
+    
+    .remove-btn {
+        align-self: flex-end;
+        min-width: auto;
+        padding: 0.5rem 1rem;
+    }
+    
+    .add-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 0.75rem;
+    }
+    
+    .header {
+        padding: 0.75rem;
+    }
+    
+    .header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .form-container {
+        padding: 0.75rem;
+        margin: 0;
+    }
+    
+    .card {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .avatar-container {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .name {
+        font-size: 1.25rem;
+    }
+    
+    .profession {
+        font-size: 0.75rem;
+    }
+    
+    .info-item {
+        font-size: 0.75rem;
+    }
+    
+    .social-icons span {
+        font-size: 1rem;
+    }
+    
+    /* 通知在小屏幕上的优化 */
+    .notification {
+        top: 0.5rem;
+        right: 0.5rem;
+        left: 0.5rem;
+        transform: translateY(-100%);
+        font-size: 0.8rem;
+    }
+    
+    .notification.show {
+        transform: translateY(0);
     }
 }
 

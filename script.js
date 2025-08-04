@@ -105,11 +105,11 @@ class CardGenerator {
         const combinedText = profession + (profession && location ? '·' : '') + location;
         this.previewProfession.textContent = combinedText || 'AI 决策·developer·中国 北京 北京市·他';
 
-        this.previewGreeting.textContent = this.greetingInput.value || '👋哈喽我是ziwen';
-        this.previewEducation.textContent = this.educationInput.value || '🏫中央民族大学｜大三｜前端开发';
-        this.previewExperience.textContent = this.experienceInput.value || '💼泰康->美团->小红书｜转码';
-        this.previewGithub.textContent = this.githubInput.value || '👨‍💻GitHub@FoundDream';
-        this.previewProjects.textContent = this.projectsInput.value || '✨@AdventureX｜OSPP｜OpenTiny';
+        this.previewGreeting.textContent = this.greetingInput.value || '👋哈喽我是QingJ';
+        this.previewEducation.textContent = this.educationInput.value || '🏫西安电子科技大学｜大一｜软件工程';
+        this.previewExperience.textContent = this.experienceInput.value || '💼腾讯->阿里->字节｜转码';
+        this.previewGithub.textContent = this.githubInput.value || '👨‍💻GitHub@QingJ01';
+        this.previewProjects.textContent = this.projectsInput.value || '✨@123pan_unlock｜Search_clear';
         
         // 更新自定义项目
         this.updateCustomItemsPreview();
@@ -515,3 +515,4 @@ document.addEventListener('keydown', (e) => {
         document.getElementById('downloadBtn').click();
     }
 });
+
